@@ -271,7 +271,6 @@
   .section-column .top-header h2 {
     font-size: 2rem;
     font-weight: 600;
-    white-space:nowrap;
     color: #000;
     width: 80%;
   }
