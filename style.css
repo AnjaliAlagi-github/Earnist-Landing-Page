@@ -5,13 +5,6 @@
     text-decoration: none;
   }
 
-  :root {
-    /* for desktop */
-    --wide-width: 1280px;
-    /* for mobile */
-    --small-width: 400px;
-  }
-
   body {
     font-family: "Poppins", sans-serif;
     background-color: #ffffff;
@@ -219,7 +212,7 @@
 
   /* banner */
   .banner {
-    max-width: var(--wide-width);
+    
     margin: 0 auto;
     display: flex;
     justify-content: center;
