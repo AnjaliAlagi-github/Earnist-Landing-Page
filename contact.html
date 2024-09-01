@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            color:black;
+          }
+          .navbar{
+            max-width: var(--wide-width);
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ffffff;
+            margin-top: 0;
+          }
+        
+           
+          
+          .navbar img {
+            width: 30%;
+            height: 20%;
+          }
+        
+          .navbar .links {
+            display: flex;
+            gap: 1rem;
+          }
+        
+          .navbar .links .link {
+            text-decoration: none;
+            color: #000000;
+            font-size: 1.3rem;
+            font-weight: 500;
+            padding: 0.4rem 1rem;
+          }
+        
+          .navbar .links .link.hidden {
+            display: none;
+          }
+        
+          .navbar .links .active {
+            background: #000;
+            color: #fff;
+          }
+        
+          .navbar .hamburger {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+          }
+        
+          .headline{
+            
+            margin-top: 60px;
+            margin-bottom: 50px;
+          }
+          .headline h1{
+            color: black;
+            width:100%;
+            margin: auto;
+            text-align: center;
+          }
+          .box-row {
+            display: flex;
+            justify-content: space-between; 
+            gap: 1rem;
+            flex-wrap: wrap; 
+            margin: 50px auto;
+            padding: 20px;
+            max-width: 1200px;
+        
+        }
+        
+        .box1, .box2, .box3 {
+            flex: 1; 
+            min-width: 250px; 
+            margin: 0 10px; 
+            background: #fff; 
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .box1:hover, .box2:hover, .box3:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+        }
+        
+        .box-row h2 {
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #333;
+            font-size: 1.75rem;
+            text-transform: uppercase;
+        }
+        
+        .box-row p {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .box-row i {
+            font-size: 2.5rem;
+            color: black;
+            display: block;
+            margin-bottom: 15px;
+        }
+        
+        
+        .container {
+            margin: 50px auto;
+            padding: 20px;
+            text-align: center;
+            max-width: 1200px;
+        }
+        
+        
+        .container h3 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        
+        .container i {
+            font-size: 3rem;
+            color: #0b25ef;
+            margin-bottom: 20px;
+        }
+        
+        
+        .container p {
+            width: 80%;
+            font-size: 1rem;
+            color: black;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            margin: auto;
+        }
+        
+        
+        .form-box {
+            width: 40%;
+            margin: auto;
+            margin-top: 30px;
+        }
+        
+        .input-field {
+            margin-bottom: 20px;
+        }
+        
+        .input-field input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        
+        .message input {
+            width: 100%;
+            height: 100px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+        
+        
+        .btn {
+            margin-top: 2%;
+            padding: 10px 18px;
+            background-color: black;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: #090f91;
+        }
+        
+        footer {
+            max-width: var(--wide-width);
+            margin: 0 auto;
+            display: grid;
+            /* responsive grid */
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.2rem;
+            padding: 3rem 2rem;
+            background: #000;
+            color: #fff;
+            margin-top: 2rem;
+          }
+        
+          footer .col {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+          }
+        
+          footer .col .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.2rem;
+          }
+        
+          footer .col .logo .img {
+            width: 40px;
+            height: 40px;
+          }
+        
+          footer .col .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        
+          footer .col h2 {
+            font-size: 1.2rem;
+            font-weight: 500;
+          }
+        
+          footer .col a {
+            text-decoration: none;
+            font-size: 1rem;
+            color: #e4e4e4d5;
+          }
+        
+          @media (max-width: 768px) {
+          .footer {
+            flex-direction: column;
+            text-align: center;
+        }
+        
+        .footer img {
+            width: 50%; 
+        }
+        
+        .socials {
+            align-items: center;
+        }
+          }
+        
+        @media (max-width: 1024px) {
+            .container p {
+                width: 90%;
+                font-size: 1rem;
+            }
+        
+            .form-box {
+                width: 60%;
+            }
+        
+            .container h3 {
+                font-size: 2.25rem;
+            }
+        
+            .container i {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .container p {
+                width: 100%;
+                font-size: 0.95rem;
+            }
+        
+            .form-box {
+                width: 80%;
+            }
+        
+            .container h3 {
+                font-size: 2rem;
+            }
+        
+            .container i {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 10px;
+            }
+        
+            .form-box {
+                width: 100%;
+            }
+        
+            .container h3 {
+                font-size: 1.75rem;
+            }
+        
+            .container p {
+                font-size: 0.9rem;
+            }
+        
+            .btn {
+                font-size: 1rem;
+            }
+        
+            .input-field input,
+            .message input {
+                padding: 8px;
+            }
+        }
+        
+        
+        
+        @media (max-width: 768px) {
+            .box-row {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+        
+        
+        @media (max-width: 768px) {
+        
+            .navbar .links {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background: #000;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 1rem;
+                transform: translateX(-100%);
+                transition: transform 0.3s ease-in;
+              }
+          
+              .navbar .links.active {
+                transform: translateX(0);
+                display: flex;
+              }
+              .navbar .links .link.hidden {
+                display: flex;
+                background: transparent;
+                border: none;
+              }
+              .navbar .hamburger {
+                display: flex;
+              }
+          
+              .navbar .links .link {
+                color: #fff;
+                font-size: 1.5rem;
+              }
+            .box-row {
+                flex-direction: column;
+                
+                gap: 1.5rem; 
+            }
+        
+            .box1, .box2, .box3 {
+                width: 100%; 
+            }
+        
+            .headline h1{
+                font-size: 1.8rem;
+            }
+        }
+        
+        @media (max-width: 1024px) {
+            
+            .navbar img {
+                width: 25%; 
+                height: auto;
+            }
+        }
+        
+        
+        .image-section {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            background: url('./public/green-mountain-landscape-against-cloudy-sky.jpg') no-repeat center center/cover;
+            display: flex;
+            opacity:inherit;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        
+        .block{
+            position: relative; 
+            color: #fff;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);  
+        }
+        
+        .block h4 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        
+        .block p {
+            font-size: 1.2rem;
+            line-height: 1.5;
+            max-width: 800px;
+            margin: 0 auto 20px;
+        }
+        
+        .block i {
+            font-size: 3rem;
+            color: white;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .image-section {
+                height: 300px;
+                padding: 10px;
+            }
+        
+            .block h4 {
+                font-size: 1.5rem;
+            }
+        
+            .block p {
+                font-size: 1rem;
+                margin-bottom: 15px;
+            }
+        
+            .block i {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .image-section {
+                height: 250px;
+                padding: 5px;
+            }
+        
+            .block h4 {
+                font-size: 1.2rem;
+            }
+        
+            .block p {
+                font-size: 0.9rem;
+                margin-bottom: 10px;
+            }
+        
+            .block i {
+                font-size: 1.5rem;
+            }
+        }
+        
+        
+        
+    </style>
+
+    <title>Contact Us</title>
+</head>
+<body>
+    
+    <div class="navbar">
+        <div class="logo">
+        <img src="./public/logo.webp" alt=""/>
+        </div>
+        <div class="links">
+            <a href="About_us.html" target="_blank" class="link">About</a>
+                <a href="" class="link">Services</a>
+                <a href="https://techizons.in/" target="_blank" class="link">Switch to Techizons<i class='bx bx-log-in'></i></a>
+                <a href="" class="link">How It Works</a>
+            <a href="" class="link active">Login</a>
+            <button class="link hidden" onclick="toggleLinks()"> Close </button>
+            <!-- Hamburger Icon -->
+          </div>
+          <div class="hamburger" id="navbarToggle" onclick="toggleLinks()">
+            &#9776;
+          </div>
+        </div>
+    </div>
+   
+    <div class="headline">
+        <h1>Contact Us </h1>
+    </div>
+
+    <section class="box-row">
+        <div class="box1">
+            <i class='bx bxs-chat'></i>
+            <h2>Chat To Us</h2>
+            <p>Our friendly team is here to help feel free to contact us at</p>
+            <a href="#">hr@techizons.in</a>
+        </div>
+    
+        <div class="box2">
+            <i class='bx bxl-telegram' style='color:#010312'></i>
+            <h2>Visit Us</h2>
+            <p>Lorem ipsum dolor sit amet  elit. Eaque ab aut culpa, suscipit id cumque illo rerum necessitatibus fugiat! Quos, fugiat!</p>
+        </div>
+    
+        <div class="box3">
+            <i class='bx bxs-phone-call'></i>
+            <h2>Call Us</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapient accusantium.</p>
+        </div>
+    </section>
+    
+
+    <section class="container">
+        <h3>Send Us A Message</h3>
+        <i class='bx bxs-phone-call' style='color:#0b25ef'  ></i>         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci asperiores saepe 
+            obcaecati culpa, itaque esse dignissimos accusamus odit tempora quidem sint rerum
+             accusantium ullam nostrum vero consequuntur ad modi praesentium?</p>
+
+             <div class="form-box">
+                <form>
+                <div class="input-field">
+                    <input type= "text" placeholder="Name">
+                </div>
+                <div class="input-field">
+                    <input type= "text" placeholder="Email">
+                </div>
+                <div class="input-field">
+                    <input type= "text" placeholder="Subject">
+                </div>
+                         <div class="message">
+                         <input type ="text" placeholder="Your Message">
+                         </div>
+               
+                <button class="btn active">Submit</button>
+            
+             </div>
+            </form>
+    </section>
+
+    <section class="image-section">
+        <div class="block">
+            <i class='bx bxl-telegram'></i>
+        <h4>KEEP IN TOUCH</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta esse reprehenderit
+             animi temporibus minima quisquam facere deserunt corrupti doloremque fugiat voluptatum,
+             voluptatem id facilis odio ipsum laudantium, consectetur, consequuntur vel!</p>
+            
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="col">
+          <div class="logo">
+            <div class="img">
+              <img src="Public/logo.webp" alt="logo" />
+            </div>
+          </div>
+          <!-- copyright -->
+          <p>&copy; 2024 Earnist Inc <br />All rights reserved</p>
+        </div>
+        <div class="col">
+          <h2>Company</h2>
+          <a href="">About</a>
+          <a href="">Services</a>
+          <a href="">Contact</a>
+          <a href="">FAQ</a>
+        </div>
+        <div class="col">
+          <h2>Resourses</h2>
+          <a href="">Blog</a>
+          <a href="">FAQ</a>
+          <a href="">Terms</a>
+          <a href="">Privacy</a>
+        </div>
+        <div class="col">
+          <h2>Connect</h2>
+          <a href="">Twitter</a>
+          <a href="">Linkdin</a>
+          <a href="">Instagram</a>
+          <a href="">Facebook</a>
+        </div>
+      </footer>
+
+    <script>
+        const toggleLinks = () => {
+          const links = document.querySelector(".links");
+          links.classList.toggle("active");
+        };
+      </script>
+
+</body>
+</html>

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <title>Login</title>
+
+     <style>
+        
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #291b4b;
+    color: #333;
+  }
+  
+  
+  .navbar{
+    max-width: var(--wide-width);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #291b4b;
+    color: white;
+    margin-top: 0;
+  }
+
+   
+  
+  .navbar img {
+    width: 30%;
+    height: 20%;
+  }
+
+  .navbar .links {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .navbar .links .link {
+    text-decoration: none;
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 500;
+    padding: 0.4rem 1rem;
+  }
+
+  .navbar .links .link.hidden {
+    display: none;
+  }
+
+  .navbar .links .active {
+    background: #000;
+    color: #fff;
+  }
+
+  .navbar .hamburger {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  .main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    background-size: cover;
+    background-position: center;
+   
+  }
+  
+  .content-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 60%;
+    background-color:  #c9bec6;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+  }
+  
+  .form-box, .image-section {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+  }
+  
+  .form-box h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  
+  .input-group .input-field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    
+  }
+  
+  .input-group .input-field input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .tacbox {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+  }
+  
+  .tacbox input {
+    margin-right: 10px;
+  }
+  
+  .field.button-field {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .field.button-field .btn {
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+  }
+  
+  .field.button-field .btn:hover {
+    background-color: #0069d9;
+  }
+  
+  .next {
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .line {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 14px;
+    color:black;
+  }
+
+  
+  .media-options {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .media-options a {
+    text-decoration: none;
+    color: #fff;
+    background-color: #db4437;
+    padding: 10px 12px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .media-options a:hover {
+    background-color: #c33e2e;
+  }
+  
+  
+  .image-section img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+  }
+  
+  
+  @media (max-width: 900px) {
+    .content-box {
+        flex-direction: column;
+        width: 100%;
+    }
+  
+    .form-box, .image-section {
+        width: 100%;
+    }
+  
+    .image-section {
+        margin-top: 0px;
+    }
+  }
+  
+  @media (max-width: 600px) {
+
+    .navbar .links {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: #000;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease-in;
+    }
+
+    .navbar .links.active {
+      transform: translateX(0);
+      display: flex;
+    }
+    .navbar .links .link.hidden {
+      display: flex;
+      background: transparent;
+      border: none;
+    }
+    .navbar .hamburger {
+      display: flex;
+    }
+
+    .navbar .links .link {
+      color: #fff;
+      font-size: 1.5rem;
+    }
+    .form-box {
+        padding: 10px;
+        width:100%;
+    }
+    .image-section {
+      margin: 0;
+      width:100%;
+  }
+    .links {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        background-color: #fff;
+        padding: 10px 20px;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+    }
+  
+    .links.show {
+        display: flex;
+    }
+  
+    .hamburger {
+        
+        display: block;
+        color: white;
+
+    }
+  }
+  
+ 
+  
+     </style>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <img src="./public/logo.webp" alt=""/>
+            </div>
+            <div class="links">
+                <a href="About_us.html" target="_blank" class="link">About</a>
+                <a href="" class="link">Services</a>
+                <a href="https://techizons.in/" target="_blank" class="link">Switch to Techizons<i class='bx bx-log-in'></i></a>
+                <a href="" class="link">How It Works</a>
+                <button class="link hidden" onclick="toggleLinks()">Close</button>
+            </div>
+            <div class="hamburger" id="navbarToggle" onclick="toggleLinks()">
+                &#9776;
+            </div>
+        </div>   
+    </div>
+
+    <div class="main">
+        <div class="content-box">
+            <div class="form-box">
+                <h2>Create an account</h2>
+                <form>
+                    <div class="input-group">
+                        <div class="input-field">
+                            <input type="Text" placeholder="First Name">
+                            <input type="Text" placeholder="Last Name">
+                        </div>
+
+                        <div class="input-field">
+                            <input type="Text" placeholder="Email">
+                        </div>
+
+                        <div class="input-field">
+                            <input type="Text" placeholder="Enter your Password">
+                        </div>
+
+                        <div class="tacbox">
+                            <input id="checkbox" type="checkbox"/>
+                            <label for="checkbox">I agree to these <a href="#">Terms and Conditions</a></label>
+                        </div>
+
+                        <div class="field button-field">
+                            <button class="btn active">Create Account</button>
+                        </div>
+
+                        <div class="next">
+                            <label>Already have an account? <a href="#">Login</a></label>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="line">or</div>
+
+                <div class="media-options">
+                    <a href="#" class="field Google">
+                        <i class='bx bxl-google'></i>
+                        <span>Login with Google</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Image Section -->
+            <div class="image-section">
+                <img src="./public/5436402.jpg" alt="Login Image">
+            </div>
+        </div>
+    </div>
+
+
+   
+
+     <script>
+        const toggleLinks = () => {
+          const links = document.querySelector(".links");
+          links.classList.toggle("active");
+        };
+      </script>
+</body>
+</html>

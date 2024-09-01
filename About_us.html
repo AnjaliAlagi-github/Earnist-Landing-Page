@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.5.1/uicons-bold-rounded/css/uicons-bold-rounded.css'>    <title>Document</title>
+     <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+      }
+    
+     
+    
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #ffffff;
+        width: 100%;
+      }
+    
+      .navbar{
+        max-width: var(--wide-width);
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #ffffff;
+        margin-top: 0;
+      }
+    
+       
+      
+      .navbar img {
+        width: 30%;
+        height: 20%;
+      }
+    
+      .navbar .links {
+        display: flex;
+        gap: 1rem;
+      }
+    
+      .navbar .links .link {
+        color: #000000;
+        font-size: 1.3rem;
+        font-weight: 500;
+        padding: 0.4rem 1rem;
+      }
+    
+      .navbar .links .link.hidden {
+        display: none;
+      }
+    
+      .navbar .links .active {
+        background: #000;
+        color: #fff;
+      }
+    
+      .navbar .hamburger {
+        display: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+      .section-container{
+    
+        margin-top: 3%;
+        margin: 0,auto;
+        color: white;
+        gap:2rem;
+        padding: 80px 50px;
+        background:black;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+      }
+      .about h1{
+        font-size:2rem;
+        margin-bottom: 2%;
+      }
+      .about{
+        
+        width:50%;
+        margin:auto;
+      }
+      .actions .btn{
+        color:white;
+        border:1px solid white;
+        background-color:black;
+        font-size:1rem;
+        padding: 0.5rem;
+        gap:0.5rem;
+        border-radius: 4px;  
+    }
+    .actions .btn.active{
+        background-color:white;
+        color:black;
+        border-radius: 4px;  
+    }
+    .card-container{
+        margin-top: 2rem;
+        width: 100%;
+        
+       
+    }  
+    .card-container h2{
+        width:50%;
+        margin: auto;
+        font-size: 2rem;
+        font-weight: bold;
+        text-align: center;
+        
+    }
+    .card-container p{
+        margin-left: 80px;
+        margin-right: 80px;
+        font-size: 1rem;
+        margin-top: 1rem;
+        text-align: center;
+        
+    }
+    
+    .rocket {
+        display: flex;
+        flex-wrap: wrap; 
+        justify-content: space-between;
+        gap: 20px; 
+        padding: 20px;
+    }
+    
+    
+    .rocket > div {
+        background-color:white; 
+        border-radius: 10px; 
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+        padding: 20px;
+        flex: 1 1 calc(25% - 20px); 
+        box-sizing: border-box;
+        text-align: center;
+    }
+    
+    
+    .rocket img {
+        max-width: 100%; 
+        border-radius: 8px;
+        margin-bottom: 15px;
+    }
+    
+    
+    .btn.active {
+        background-color: #007bff; 
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    
+    .btn.active:hover {
+        background-color: #0056b3; 
+    }
+    
+    
+    .ratings {
+        margin-bottom: 10px;
+    }
+    
+    .checked {
+        color: black; 
+    }
+    
+    
+    @media screen and (max-width: 768px) {
+        .rocket > div {
+            flex: 1 1 calc(50% - 20px); 
+        }
+    }
+    
+    @media screen and (max-width: 480px) {
+        .rocket > div {
+            flex: 1 1 100%; 
+        }
+    }
+    
+    
+    
+    
+    
+    .content {
+        margin-top: 10%;
+        padding: 0 20px; 
+    }
+    
+    .content h2 {
+        font-size: 30px;
+        margin-bottom: 3%;
+        text-align: center; 
+    }
+    
+    
+    .box-row {  
+        display: flex;
+        justify-content: space-between; 
+        gap: 1rem; 
+        flex-wrap: wrap; 
+        margin: 0 20px; 
+        padding: 20px 0; 
+    }
+    
+    
+    .box1, .box2, .box3, .box4 {
+        flex: 1; 
+        min-width: 200px; 
+        margin: 0 10px; 
+    }
+    
+    .box-row img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 15px;
+    }
+    
+    
+    .box-row h3 {
+        font-weight: bold;
+        margin-bottom: 20px;
+        color:black;
+    }
+    
+    .box-row p {
+        font-size: 1.2rem;
+        color:black;
+        line-height: 1.5;
+    }
+    
+    
+    @media (max-width: 768px) {
+        .box-row {
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem; 
+        }
+    
+        .box1, .box2, .box3, .box4 {
+            max-width: 90%; 
+        }
+    }
+    
+    
+    .right {
+        width: 80%;
+        margin: 0 auto;
+        padding: 20px;
+        background: #f9f9f9;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    
+    .slider h3 {
+        font-size: 2rem;
+        color: #333;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    
+    
+    .slides {
+        position: relative;
+    }
+    .slider i{
+        font-size: 30px;
+    }
+    
+    
+    .review {
+        font-size: 1.2rem;
+        color: #555;
+        line-height: 1.6;
+        padding: 15px;
+        border-bottom: 1px solid #ddd; 
+    }
+    
+    
+    .review:last-child {
+        border-bottom: none;
+    }
+    
+    
+    
+    
+    @media (max-width: 768px) {
+        .right {
+            padding: 15px;
+        }
+    
+        .slider h3 {
+            font-size: 1.5rem;
+        }
+    
+        .review {
+            font-size: 1rem;
+            padding: 10px;
+        }
+    
+       
+    }
+    
+    @media (max-width: 768px) {
+        .right {
+            padding: 15px;
+        }
+    
+        .slider h3 {
+            font-size: 1.5rem;
+        }
+    
+        .review {
+            font-size: 1rem;
+        }
+    
+        .navigation span {
+            font-size: 0.9rem;
+            padding: 8px;
+        }
+    }
+    footer {
+        max-width: var(--wide-width);
+        margin: 0 auto;
+        display: grid;
+        /* responsive grid */
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.2rem;
+        padding: 3rem 2rem;
+        background: #000;
+        color: #fff;
+        margin-top: 2rem;
+      }
+    
+      footer .col {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+    
+      footer .col .logo {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        font-size: 1.2rem;
+      }
+    
+      footer .col .logo .img {
+        width: 40px;
+        height: 40px;
+      }
+    
+      footer .col .logo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    
+      footer .col h2 {
+        font-size: 1.2rem;
+        font-weight: 500;
+      }
+    
+      footer .col a {
+        font-size: 1rem;
+        color: #e4e4e4d5;
+      }
+    
+    
+    @media (max-width: 1024px) {
+        
+        .navbar img {
+            width: 25%; 
+            height: auto;
+        }
+    
+        .section-container {
+            padding: 3rem 1rem; 
+        }
+    
+        .section-container .left {
+            width: 100%; 
+            margin-left: 0;
+        }
+    
+        .section-container p {
+            width: 100%; 
+        }
+    
+        .card-container p {
+           font-size: 1rem;
+        }
+    
+        .card1, .card2, .card3, .card4 {
+            width: 100%; 
+        }
+    
+        .black {
+            padding: 100px 30px;
+        }
+    
+        .right {
+            width: 100%;
+            font-size: 1rem; 
+        }
+        .black {
+            flex-direction: column;
+            padding: 100px 20px;
+            gap: 2rem; 
+        }
+    
+        .black .left,
+        .black .right {
+            width: 100%; 
+            margin: 0;
+        }
+    
+        .black .left {
+            font-size: 22px; 
+        }
+    
+        .black .right {
+            padding: 0; 
+        }
+    
+        .review {
+            font-size: 1.1rem; 
+        }
+    
+        .navigation {
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        .navigation span {
+            font-size: 14px; 
+            margin: 5px 0; 
+        }
+        .section-container {
+            flex-direction: column;
+            padding: 3rem 1rem; 
+        }
+    
+        .section-container .left,
+        .section-container .image {
+            width: 100%; 
+        }
+    
+        .section-container .left {
+            margin: 0; 
+        }
+    
+        .section-container h1 {
+            font-size: 2rem;
+        }
+    
+        .section-container p {
+            width: 100%; 
+        }
+    
+        .section-container img {
+            width: 100%; 
+            height: auto; 
+            margin-left: 0; 
+        }
+    
+        .center {
+            padding: 2rem 1rem; 
+            text-align: center; 
+        }
+    
+        .header h3 {
+            font-size: 2rem; 
+        }
+    
+        .header p {
+            font-size: 1.2rem; 
+        }
+    
+        .header h5 {
+            font-size: 1.5rem; 
+            width: 100%; 
+        }
+    }
+    
+    @media (max-width: 768px) {
+        
+        .navbar .links {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: #000;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in;
+          }
+      
+          .navbar .links.active {
+            transform: translateX(0);
+            display: flex;
+          }
+          .navbar .links .link.hidden {
+            display: flex;
+            background: transparent;
+            border: none;
+          }
+          .navbar .hamburger {
+            display: flex;
+          }
+      
+          .navbar .links .link {
+            color: #fff;
+            font-size: 1.5rem;
+          }
+        .section-container {
+            padding: 2rem 1rem; 
+            flex-direction: column;
+        }
+    
+        .section-container .left {
+            width: 100%; 
+            margin-left: 0;
+        }
+    
+        .section-container img {
+            margin-left: 0; 
+        }
+    
+        .card-container{
+            width:100%;
+            
+        }
+       .card-container p{
+            display: block;
+            margin: auto;
+            text-align: left;
+    
+        }
+        .footer {
+            flex-direction: column;
+            text-align: center;
+        }
+    
+        .footer img {
+            width: 50%; 
+        }
+    
+        .socials {
+            align-items: center;
+        }
+    
+        .icons {
+            justify-content: center;
+        }
+    
+        .black {
+            padding: 100px 20px; 
+        }
+    
+        .right {
+            width: 100%; 
+            font-size: 1rem;
+        }
+        .box-row {
+            grid-template-columns: 1fr;
+        }
+        .review {
+            padding: 15px; 
+        }
+    
+        .navigation span {
+            font-size: 14px;
+        }
+        .black {
+            padding: 80px 10px; 
+        }
+    
+        .black .left {
+            font-size: 20px; 
+        }
+    
+        .black .right {
+            padding: 0; 
+        }
+    
+        .review {
+            font-size: 1rem;
+        }
+    
+        .navigation span {
+            font-size: 12px; 
+            margin: 5px 0; 
+        }
+        .section-container {
+            padding: 2rem 1rem; 
+        }
+    
+        .section-container h1 {
+            font-size: 1.5rem;
+        }
+    
+        .section-container p {
+            font-size: 1rem; 
+        }
+    
+        .section-container img {
+            margin-left: 0; 
+        }
+    
+        .center {
+            padding: 1rem; 
+        }
+    
+        .header h3 {
+            font-size: 1.5rem; 
+        }
+    
+        .header p {
+            font-size: 1rem; 
+        }
+    
+        .header h5 {
+            font-size: 1.25rem; 
+        }
+    }
+    
+    
+    @media (max-width: 480px) {
+        
+        .navbar img {
+            width: 60%; 
+        }
+    
+        .section-container {
+            padding: 1rem; 
+        }
+    
+        .section-container .left {
+            width: 100%; 
+        }
+    
+        .section-container h1 {
+            font-size: 2rem; 
+        }
+    
+        .section-container p {
+            width: 100%; 
+        }
+    
+        .card-container {
+            gap: 0.5rem;
+        }
+        .card-container .headline h2{
+        width:100%;
+        font-size: 1.25rem;
+        }
+        .card-container p{
+        font-size: 1rem;
+        }
+    
+        
+        .black {
+            padding: 80px 10px;
+        }
+    
+        .right {
+            width: 100%; 
+            font-size: 0.875rem; 
+        }
+        .review {
+            padding: 10px; 
+        }
+    
+        .navigation span {
+            font-size: 12px; /
+        }
+        .section-container {
+            padding: 1rem; 
+        }
+    
+        .section-container h1 {
+            font-size: 1.25rem; 
+        }
+    
+        .section-container p {
+            font-size: 0.875rem; 
+        }
+    
+        .section-container img {
+            width: 100%; 
+        }
+    
+        .center {
+            padding: 0.5rem; 
+        }
+    
+        .header h3 {
+            font-size: 1.25rem; 
+        }
+        .card-container p{
+            margin-left: 5px;
+            font-size: 1rem;
+        }
+        .card-container h2{
+            text-align:center;
+            font-size: 2rem;
+        }
+        .black {
+            padding: 60px 5px; 
+        }
+    
+        .black .left {
+            font-size: 18px; 
+        }
+    
+        .black .right {
+            padding: 0;
+        }
+    
+        .review {
+            font-size: 0.875rem; 
+        }
+    
+        .navigation span {
+            font-size: 10px; 
+        }
+    }    
+     </style>
+  </head>
+<body>
+  
+<div class="navbar">
+    <div class="logo">
+    <img src="./public/logo.webp" alt=""/>
+    </div>
+    <div class="links">
+        <a href="" class="link">About</a>
+        <a href="" class="link">Services</a>
+        <a href="https://techizons.in/" target="_blank" class="link">Switch to Techizons<i class='bx bx-log-in'></i></a>
+        <a href="" class="link active">Login</a>
+        <button class="link hidden" onclick="toggleLinks()"> Close </button>
+        <!-- Hamburger Icon -->
+      </div>
+      <div class="hamburger" id="navbarToggle" onclick="toggleLinks()">
+        &#9776;
+      </div>
+    </div>
+</div>
+
+<section class="section-container">
+    
+    <div class="about">
+        <h1>About Drop Services</h1>
+        <hr>
+        </div>
+        <div class="actions">
+            <button class="btn">Learn Now</button>
+            <button class="btn active" >
+              Join Now
+            </button>
+          </div>
+    </div>
+    
+
+</section>
+
+<section class="card-container">
+    <div class="headline">
+        <h2>Our Services</h2>
+    </div>
+   <div class="paragraph">
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat nihil velit voluptatum omnis doloribus. Officiis, magni assumenda. Nam, sapiente nihil aspernatur, unde similique minima
+     aliquid explicabo deserunt earum tempora aut.</p>
+   </div>
+
+</section>
+
+<section class="rocket">
+    <div class="card1">
+        <h3>Graphics Design</h3>
+        <img src="./public/graphic d.jpg" alt"" />
+    
+    <div class="ratings">
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star"></span>
+    (250)
+     </div>
+    <button class="btn active " >
+        Read More
+      </button>
+
+</div>
+
+
+<div class="card2">
+    <h3>Web Development</h3>
+    <img src="./public/web dev.jpg" alt"" />
+
+<div class="ratings">
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+(250)
+</div>
+
+<button class="btn active " >
+    Read More
+  </button>
+</div>
+
+
+<div class="card3">
+    <h3>UI/UX Designer</h3>
+    <img src="./public/Ux.jpg" alt"" />
+
+<div class="ratings">
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+(250)
+</div>
+<button class="btn" >
+    Read More
+  </button>
+</div>
+
+
+<div class="card4">
+    <h3>Digital Marketing</h3>
+    <img src="./public/digi.jpg" alt"" />
+
+<div class="ratings">
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+(250)
+</div>
+<button class="btn" >
+    Read More
+  </button>
+</div>
+
+</section>
+
+
+
+<section class="content">
+    <div>
+        <h2>Awesome Features</h2>
+    </div>
+
+   
+    <div class="box-row">
+    <div class="box1">
+        <img src="./public/package (2).png" alt""/>
+        <h3>Drop Services</h3>
+        <p>years full-cycle development experienceSince we have in- house subject matter experts and domain expertise, we introduce time
+        that is needed to make the team onboarded</p>
+       </div>
+
+       <div class="box2">
+        <img src="./public/credit-card.png" alt""/>
+        <h3>A stable product is ensured by
+        </h3>
+        <p>Picking the application architecture and technologies that are most suitable for the product. Conducting a variety of tests during the software development
+         life cycle, and carrying out load testing</p>
+       </div>
+
+
+       <div class="box3">
+        <img src="./public/deal.png" alt""/>
+                <h3>Commitment to Product-Market Fit</h3>
+        <p>Our Implementation of the Design Thinking methodology allows us to target and achieve 
+            a product-market match</p>
+       </div>
+
+       
+
+       <div class="box4">
+        <img src="./public/search-file.png"/>
+        <h3>Overview</h3>
+        <p>By using a high-level overview, flexible software development management methodologies (Agile & Scrum), and certified project managers, we carefully track every step 
+            of our projects to deliver on time and budget</p>
+       </div>
+    
+
+    </div>
+
+</section>
+
+<div class="right">
+  <div class="slider">
+    <i class='bx bx-question-mark bx-flip-vertical bx-tada' style='color:#01020c' ></i>
+      <h3>FAQ for Drop Services</h3>
+      <div class="slides">
+          <p class="review active">What is drop servicing?</p>
+          <p class="review">What type of services can be provided?</p>
+          <p class="review">Is drop servicing legal?</p>
+          <p class="review">Brief Overview of Drop Servicing</p>
+          <p class="review">How to start work with us</p>
+          <p class="review">What are the steps</p>
+          <p class="review">How we can earn with drop services</p>
+
+     
+        </div>
+
+
+  </div>
+  
+  
+</div>
+   <footer>
+    <div class="col">
+      <div class="logo">
+        <div class="img">
+          <img src="Public/logo.webp" alt="logo" />
+        </div>
+      </div>
+      <!-- copyright -->
+      <p>&copy; 2024 Earnist Inc <br />All rights reserved</p>
+    </div>
+    <div class="col">
+      <h2>Company</h2>
+      <a href="">About</a>
+      <a href="">Services</a>
+      <a href="">Contact</a>
+      <a href="">FAQ</a>
+    </div>
+    <div class="col">
+      <h2>Resourses</h2>
+      <a href="">Blog</a>
+      <a href="">FAQ</a>
+      <a href="">Terms</a>
+      <a href="">Privacy</a>
+    </div>
+    <div class="col">
+      <h2>Connect</h2>
+      <a href="">Twitter</a>
+      <a href="">Linkdin</a>
+      <a href="">Instagram</a>
+      <a href="">Facebook</a>
+    </div>
+  </footer>
+
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const slides = document.querySelectorAll('.review');
+        let currentIndex = 0;
+    
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+        }
+    
+        document.getElementById('prev-btn').addEventListener('click', () => {
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : slides.length - 1;
+            showSlide(currentIndex);
+        });
+    
+        document.getElementById('next-btn').addEventListener('click', () => {
+            currentIndex = (currentIndex < slides.length - 1) ? currentIndex + 1 : 0;
+            showSlide(currentIndex);
+        });
+    
+        // Initialize with the first slide
+        showSlide(currentIndex);
+    });
+    </script>
+    
+    
+</script>
+<script>
+    const toggleLinks = () => {
+      const links = document.querySelector(".links");
+      links.classList.toggle("active");
+    };
+  </script>
+
+
+
+</body>
+</html>
+
+
+
+
