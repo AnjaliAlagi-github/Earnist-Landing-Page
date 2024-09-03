@@ -14,7 +14,7 @@
         text-decoration: none;
       }
     
-     
+           
     
       body {
         font-family: "Poppins", sans-serif;
@@ -112,23 +112,92 @@
         font-size: 2rem;
         font-weight: bold;
         text-align: center;
+     
         
     }
     .card-container p{
         margin-left: 80px;
         margin-right: 80px;
-        font-size: 1rem;
+        font-size: 1.3rem;
         margin-top: 1rem;
         text-align: center;
+        word-spacing: normal;
+
         
     }
+
+    
+    
+    .nexts {
+        margin-top: 2rem;
+        width: 100%;
+    }
+    
+    .nexts h2 {
+        width: 50%;
+        margin: auto;
+        font-size: 2rem;
+        font-weight: bold;
+        text-align: center;
+    }
+    
+    .nexts p {
+        margin-left: 80px;
+        margin-right: 80px;
+        font-size: 1.3rem;
+        margin-top: 1rem;
+        word-spacing: normal;
+        text-align: center;
+    }
+    @media (max-width: 1024px) {
+        .nexts h2 {
+            width: 60%;
+            font-size: 1.8rem;
+        }
+    
+        .nexts p {
+            margin-left: 60px;
+            margin-right: 60px;
+            font-size: 1.2rem;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .nexts h2 {
+            width: 80%;
+            font-size: 1.6rem;
+        }
+    
+        .nexts p {
+            margin-left: 40px;
+            margin-right: 40px;
+            font-size: 1.1rem;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .nexts h2 {
+            
+            font-size: 1.25rem;
+        }
+    
+        .nexts p {
+            text-align: left;
+            margin-left: 20px;
+            margin-right: 20px;
+            font-size: 1rem;
+        }
+    }
+    
     
     .rocket {
+        margin-top: 3rem;
         display: flex;
         flex-wrap: wrap; 
         justify-content: space-between;
         gap: 20px; 
         padding: 20px;
+        
     }
     
     
@@ -141,6 +210,10 @@
         box-sizing: border-box;
         text-align: center;
     }
+    .rocket h3{
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
     
     
     .rocket img {
@@ -151,7 +224,7 @@
     
     
     .btn.active {
-        background-color: black; 
+        background-color:black; 
         color: white;
         padding: 10px 20px;
         border: none;
@@ -164,15 +237,7 @@
         background-color: #0056b3; 
     }
     
-    
-    .ratings {
-        margin-bottom: 10px;
-    }
-    
-    .checked {
-        color: black; 
-    }
-    
+   
     
     @media screen and (max-width: 768px) {
         .rocket > div {
@@ -185,10 +250,6 @@
             flex: 1 1 100%; 
         }
     }
-    
-    
-    
-    
     
     .content {
         margin-top: 10%;
@@ -251,85 +312,74 @@
     }
     
     
-    .right {
-        width: 80%;
-        margin: 0 auto;
+    .faq-section {
+        max-width: 800px;
+        margin: 50px auto;
         padding: 20px;
-        background: #f9f9f9;
+        background-color: #fff;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
     
-    
-    .slider h3 {
-        font-size: 2rem;
+    h2 {
+        text-align: center;
         color: #333;
         margin-bottom: 20px;
-        text-align: center;
     }
     
-    
-    .slides {
-        position: relative;
-    }
-    .slider i{
-        font-size: 30px;
+    .faq-item {
+        margin-bottom: 10px;
+        border-bottom: 1px solid #ddd;
     }
     
-    
-    .review {
-        font-size: 1.2rem;
-        color: #555;
-        line-height: 1.6;
+    .faq-question {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #333;
+        color: #fff;
+        border: none;
         padding: 15px;
-        border-bottom: 1px solid #ddd; 
+        width: 100%;
+        text-align: left;
+        cursor: pointer;
+        outline: none;
+        font-size: 16px;
+        border-radius: 5px;
+        transition: background-color 0.3s;
     }
     
-    
-    .review:last-child {
-        border-bottom: none;
+    .faq-question:hover {
+        background-color: #555;
     }
     
-    
-    
-    
-    @media (max-width: 768px) {
-        .right {
-            padding: 15px;
-        }
-    
-        .slider h3 {
-            font-size: 1.5rem;
-        }
-    
-        .review {
-            font-size: 1rem;
-            padding: 10px;
-        }
-    
-       
+    .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        background-color: #f5f5f5;
+        color: #000;
+        padding: 0 15px;
+        transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+        border-left: 3px solid #333;
     }
     
-    @media (max-width: 768px) {
-        .right {
-            padding: 15px;
-        }
-    
-        .slider h3 {
-            font-size: 1.5rem;
-        }
-    
-        .review {
-            font-size: 1rem;
-        }
-    
-        .navigation span {
-            font-size: 0.9rem;
-            padding: 8px;
-        }
+    .faq-answer p {
+        margin: 15px 0;
     }
+    
+    .faq-item.active .faq-answer {
+        max-height: 150px;
+        padding: 15px;
+    }
+    
+    .faq-item.active .faq-question i {
+        transform: rotate(180deg);
+        transition: transform 0.3s ease;
+    }
+    
+  
     footer {
-        max-width: var(--wide-width);
+    
         margin: 0 auto;
         display: grid;
         /* responsive grid */
@@ -365,7 +415,7 @@
         object-fit: cover;
       }
     
-      footer .col h2 {
+      footer .col h4 {
         font-size: 1.2rem;
         font-weight: 500;
       }
@@ -395,56 +445,23 @@
         .section-container p {
             width: 100%; 
         }
-    
-        .card-container p {
-           font-size: 1rem;
+        .card-container h2 {
+            width: 60%;
+            font-size: 1.8rem;
         }
     
+        .card-container p {
+            margin-left: 60px;
+            margin-right: 60px;
+            font-size: 1.2rem;
+        }
+    
+   
         .card1, .card2, .card3, .card4 {
             width: 100%; 
         }
     
-        .black {
-            padding: 100px 30px;
-        }
-    
-        .right {
-            width: 100%;
-            font-size: 1rem; 
-        }
-        .black {
-            flex-direction: column;
-            padding: 100px 20px;
-            gap: 2rem; 
-        }
-    
-        .black .left,
-        .black .right {
-            width: 100%; 
-            margin: 0;
-        }
-    
-        .black .left {
-            font-size: 22px; 
-        }
-    
-        .black .right {
-            padding: 0; 
-        }
-    
-        .review {
-            font-size: 1.1rem; 
-        }
-    
-        .navigation {
-            flex-direction: column;
-            align-items: center;
-        }
-    
-        .navigation span {
-            font-size: 14px; 
-            margin: 5px 0; 
-        }
+       
         .section-container {
             flex-direction: column;
             padding: 3rem 1rem; 
@@ -472,6 +489,7 @@
             height: auto; 
             margin-left: 0; 
         }
+
     
         .center {
             padding: 2rem 1rem; 
@@ -568,44 +586,7 @@
             justify-content: center;
         }
     
-        .black {
-            padding: 100px 20px; 
-        }
-    
-        .right {
-            width: 100%; 
-            font-size: 1rem;
-        }
-        .box-row {
-            grid-template-columns: 1fr;
-        }
-        .review {
-            padding: 15px; 
-        }
-    
-        .navigation span {
-            font-size: 14px;
-        }
-        .black {
-            padding: 80px 10px; 
-        }
-    
-        .black .left {
-            font-size: 20px; 
-        }
-    
-        .black .right {
-            padding: 0; 
-        }
-    
-        .review {
-            font-size: 1rem;
-        }
-    
-        .navigation span {
-            font-size: 12px; 
-            margin: 5px 0; 
-        }
+       
         .section-container {
             padding: 2rem 1rem; 
         }
@@ -621,6 +602,18 @@
         .section-container img {
             margin-left: 0; 
         }
+        .card-container h2 {
+            width: 80%;
+            font-size: 1.6rem;
+        }
+    
+        .card-container p {
+            margin-left: 40px;
+            margin-right: 40px;
+            font-size: 1.1rem;
+        }
+
+        
     
         .center {
             padding: 1rem; 
@@ -643,7 +636,7 @@
     @media (max-width: 480px) {
         
         .navbar img {
-            width: 60%; 
+            width: 20%; 
         }
     
         .section-container {
@@ -663,32 +656,22 @@
         }
     
         .card-container {
+
             gap: 0.5rem;
         }
         .card-container .headline h2{
+         margin-bottom: 1rem;
         width:100%;
         font-size: 1.25rem;
         }
+
         .card-container p{
+            
         font-size: 1rem;
+        margin-left: 20px;
+        margin-right: 20px;
         }
-    
         
-        .black {
-            padding: 80px 10px;
-        }
-    
-        .right {
-            width: 100%; 
-            font-size: 0.875rem; 
-        }
-        .review {
-            padding: 10px; 
-        }
-    
-        .navigation span {
-            font-size: 12px; /
-        }
         .section-container {
             padding: 1rem; 
         }
@@ -712,33 +695,8 @@
         .header h3 {
             font-size: 1.25rem; 
         }
-        .card-container p{
-            margin-left: 5px;
-            font-size: 1rem;
-        }
-        .card-container h2{
-            text-align:center;
-            font-size: 2rem;
-        }
-        .black {
-            padding: 60px 5px; 
-        }
     
-        .black .left {
-            font-size: 18px; 
-        }
-    
-        .black .right {
-            padding: 0;
-        }
-    
-        .review {
-            font-size: 0.875rem; 
-        }
-    
-        .navigation span {
-            font-size: 10px; 
-        }
+       
     }    
      </style>
   </head>
@@ -749,10 +707,10 @@
     <img src="./Public/logo.webp" alt=""/>
     </div>
     <div class="links">
-        <a href="" class="link">About</a>
-        <a href="" class="link">Services</a>
-        <a href="https://techizons.in/" target="_blank" class="link">Switch to Techizons<i class='bx bx-log-in'></i></a>
-        <a href="login.html" target="_blank"class="link active">Login</a>
+        <a href="index.html"  target="_blank" class="link">Home</a>
+         <a href="About_us.html" target="_blank" class="link">About</a>
+                <a href="https://techizons.in/" target="_blank" class="link">Switch to Techizons<i class='bx bx-log-in'></i></a>
+                <a href="" class="link">How It Works</a>
         <button class="link hidden" onclick="toggleLinks()"> Close </button>
         <!-- Hamburger Icon -->
       </div>
@@ -779,6 +737,16 @@
 
 </section>
 
+<section class="nexts">
+    <div class="headline">
+        <h2>Earning with Drop Servicing</h2>
+    </div>
+   <div class="paragraph">
+    <p>Maximize Your Earning Potential by Leveraging Our Innovative Drop Servicing Platform.Discover How to Turn Your Skills into a Income Stream and Achieve Financial Independence</p>
+   </div>
+
+</section>
+
 <section class="card-container">
     <div class="headline">
         <h2>Our Services</h2>
@@ -795,15 +763,8 @@
         <h3>Graphics Design</h3>
         <img src="./Public/graphic d.jpg" alt"" />
     
-    <div class="ratings">
-    <span class="fa fa-star checked"></span>
-    <span class="fa fa-star checked"></span>
-    <span class="fa fa-star checked"></span>
-    <span class="fa fa-star checked"></span>
-    <span class="fa fa-star"></span>
-    (250)
-     </div>
-    <button class="btn active " >
+    
+    <button class="btn active" >
         Read More
       </button>
 
@@ -814,14 +775,7 @@
     <h3>Web Development</h3>
     <img src="./Public/web dev.jpg" alt"" />
 
-<div class="ratings">
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star"></span>
-(250)
-</div>
+
 
 <button class="btn active " >
     Read More
@@ -831,16 +785,9 @@
 
 <div class="card3">
     <h3>UI/UX Designer</h3>
-    <img src="./Public/Ux.jpg" alt"" />
+    <img src="./public/Ux.jpg" alt"" />
 
-<div class="ratings">
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star"></span>
-(250)
-</div>
+
 <button class="btn active" >
     Read More
   </button>
@@ -849,16 +796,9 @@
 
 <div class="card4">
     <h3>Digital Marketing</h3>
-    <img src="./Public/digi.jpg" alt"" />
+    <img src="./public/digi.jpg" alt"" />
 
-<div class="ratings">
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star"></span>
-(250)
-</div>
+
 <button class="btn active" >
     Read More
   </button>
@@ -912,90 +852,134 @@
 
 </section>
 
-<div class="right">
-  <div class="slider">
-    <i class='bx bx-question-mark bx-flip-vertical bx-tada' style='color:#01020c' ></i>
-      <h3>FAQ for Drop Services</h3>
-      <div class="slides">
-          <p class="review active">What is drop servicing?</p>
-          <p class="review">What type of services can be provided?</p>
-          <p class="review">Is drop servicing legal?</p>
-          <p class="review">Brief Overview of Drop Servicing</p>
-          <p class="review">How to start work with us</p>
-          <p class="review">What are the steps</p>
-          <p class="review">How we can earn with drop services</p>
+<div class="faq-section">
+    <h2><i class='bx bx-question-mark bx-tada' ></i>Frequently Asked Questions</h2>
 
-     
+    <div class="faq-item">
+        <button class="faq-question">
+            <span>What is drop servicing?</span>
+            <i class='bx bxs-chevron-down'></i>
+        </button>
+        <div class="faq-answer">
+            <p>Drop servicing is a business model where you sell services that are fulfilled by third-party providers.</p>
         </div>
+    </div>
 
+    <div class="faq-item">
+        <button class="faq-question">
+            <span>What type of services can be provided?</span>
+            <i class='bx bxs-chevron-down'></i>
+        </button>
+        <div class="faq-answer">
+            <p>You can provide a variety of services such as graphic design, content writing, and web development.</p>
+        </div>
+    </div>
 
-  </div>
-  
-  
+    <div class="faq-item">
+        <button class="faq-question">
+            <span>Is drop servicing legal?</span>
+            <i class='bx bxs-chevron-down'></i>
+        </button>
+        <div class="faq-answer">
+            <p>Yes, drop servicing is legal as long as you follow the relevant laws and regulations in your area.</p>
+        </div>
+    </div>
+    <div class="faq-item">
+        <button class="faq-question">
+            <span>Brief Overview of Drop Servicing</span>
+            <i class='bx bxs-chevron-down'></i>
+        </button>
+        <div class="faq-answer">
+            <p>Drop servicing is a business model where you act as a middleman by selling services to clients and then outsourcing those services to third-party providers.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">
+            <span>How to start work with us</span>
+            <i class='bx bxs-chevron-down'></i>
+        </button>
+        <div class="faq-answer">
+            <p>To start working with us, you need to sign up through our website, choose the services you're interested in, and start offering them to your clients.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">
+            <span>What are the steps</span>
+            <i class='bx bxs-chevron-down'></i>
+        </button>
+        <div class="faq-answer">
+            <p>The steps include signing up, selecting the services you want to offer, marketing those services, and managing client orders by outsourcing the work to our trusted providers.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">
+            <span>How we can earn with drop services</span>
+            <i class='bx bxs-chevron-down'></i>
+        </button>
+        <div class="faq-answer">
+            <p>You earn by setting a price for the services you offer, which is higher than the cost paid to the service providers. The difference between these amounts is your profit.</p>
+        </div>
+    </div>
 </div>
-   <footer>
+</div> 
+</div>
+<footer>
     <div class="col">
       <div class="logo">
         <div class="img">
-          <img src="Public/logo.webp" alt="logo" />
+          <img src="Public/logo.png" alt="logo" />
         </div>
       </div>
       <!-- copyright -->
       <p>&copy; 2024 Earnist Inc <br />All rights reserved</p>
     </div>
     <div class="col">
-      <h2>Company</h2>
+      <h4>Company</h4>
       <a href="">About</a>
       <a href="">Services</a>
       <a href="">Contact</a>
       <a href="">FAQ</a>
     </div>
     <div class="col">
-      <h2>Resourses</h2>
+      <h4>Resourses</h4>
       <a href="">Blog</a>
       <a href="">FAQ</a>
       <a href="">Terms</a>
       <a href="">Privacy</a>
     </div>
     <div class="col">
-      <h2>Connect</h2>
+      <h4>Connect</h4>
       <a href="">Twitter</a>
       <a href="">Linkdin</a>
       <a href="">Instagram</a>
       <a href="">Facebook</a>
     </div>
   </footer>
-
-
-
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-        const slides = document.querySelectorAll('.review');
-        let currentIndex = 0;
+        const faqItems = document.querySelectorAll('.faq-item');
     
-        function showSlide(index) {
-            slides.forEach((slide, i) => {
-                slide.classList.toggle('active', i === index);
+        faqItems.forEach(item => {
+            const questionButton = item.querySelector('.faq-question');
+            
+            questionButton.addEventListener('click', function() {
+                // Toggle the active class on the clicked FAQ item
+                item.classList.toggle('active');
+    
+                // Close other FAQ items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
             });
-        }
-    
-        document.getElementById('prev-btn').addEventListener('click', () => {
-            currentIndex = (currentIndex > 0) ? currentIndex - 1 : slides.length - 1;
-            showSlide(currentIndex);
         });
-    
-        document.getElementById('next-btn').addEventListener('click', () => {
-            currentIndex = (currentIndex < slides.length - 1) ? currentIndex + 1 : 0;
-            showSlide(currentIndex);
-        });
-    
-        // Initialize with the first slide
-        showSlide(currentIndex);
     });
+    
     </script>
-    
-    
-</script>
 <script>
     const toggleLinks = () => {
       const links = document.querySelector(".links");
@@ -1003,11 +987,5 @@
     };
   </script>
 
-
-
 </body>
 </html>
-
-
-
-
