@@ -16,8 +16,7 @@
   
   body {
     font-family: Arial, sans-serif;
-    background-color: #291b4b;
-    color: #333;
+    color:black
   }
   
   
@@ -27,8 +26,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #291b4b;
-    color: white;
+    background-color: #ffffff;
+    border:solid rgb(250, 246, 246);
     margin-top: 0;
   }
 
@@ -46,7 +45,7 @@
 
   .navbar .links .link {
     text-decoration: none;
-    color: white;
+    color:black;
     font-size: 1.3rem;
     font-weight: 500;
     padding: 0.4rem 1rem;
@@ -83,7 +82,7 @@
     justify-content: space-between;
     align-items: stretch;
     width: 60%;
-    background-color:  #c9bec6;
+    background-color:  black;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     overflow: hidden;
@@ -99,8 +98,8 @@
   
   .form-box h2 {
     text-align: center;
-    margin-bottom: 20px;
-    color: #333;
+    margin-bottom: 30px;
+    color: white;
   }
   
   
@@ -115,8 +114,8 @@
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    border: 1px solid white;
+    border-radius: 3px;
   }
   
   .tacbox {
@@ -124,8 +123,11 @@
     display: flex;
     align-items: center;
     font-size: 14px;
+    color: white;
   }
-  
+  .tacbox a{
+    color: blue;
+  }
   .tacbox input {
     margin-right: 10px;
   }
@@ -137,10 +139,10 @@
   
   .field.button-field .btn {
     padding: 10px 20px;
-    background-color: black;
-    color: white;
+    background-color: whitesmoke;
+    color:  black;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
     width: 100%;
     transition: background-color 0.3s ease;
@@ -153,29 +155,32 @@
   .next {
     text-align: center;
     font-size: 14px;
-    color: #555;
+    color: white;
+  }
+  .next a{
+    color: blue;
   }
   
   .line {
     text-align: center;
     margin: 20px 0;
     font-size: 14px;
-    color:black;
+    color:white;
   }
 
   
   .media-options {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 10px;
   }
   
   .media-options a {
     text-decoration: none;
-    color: #fff;
-    background-color: #db4437;
+    color: blue;
+    background-color:whitesmoke;
     padding: 10px 12px;
-    border-radius: 5px;
+    border-radius: 8px;
     display: flex;
     align-items: center;
     gap: 2px;
@@ -183,7 +188,7 @@
   }
   
   .media-options a:hover {
-    background-color: #c33e2e;
+    background-color: whitesmoke;
   }
   
   
@@ -196,7 +201,7 @@
   
   @media (max-width: 900px) {
     .content-box {
-        flex-direction: column;
+        
         width: 100%;
     }
   
@@ -244,14 +249,21 @@
       color: #fff;
       font-size: 1.5rem;
     }
-    .form-box {
-        padding: 10px;
-        width:100%;
-    }
-    .image-section {
-      margin: 0;
-      width:100%;
+
+    .content-box {
+      flex-direction: column;  
+      width: 100%;
   }
+
+  .form-box, .image-section {
+      width: 100%;
+  }
+
+  .image-section {
+      margin-top: 0px;
+  }
+
+    
     .links {
         display: none;
         flex-direction: column;
@@ -272,7 +284,7 @@
     .hamburger {
         
         display: block;
-        color: white;
+        color: black;
 
     }
   }
@@ -288,15 +300,16 @@
                 <img src="./Public/logo.webp" alt=""/>
             </div>
             <div class="links">
+              <a href="index.html" target="_blank" class="link">Home</a>
                 <a href="About_us.html" target="_blank" class="link">About</a>
-                <a href="" class="link">Services</a>
                 <a href="https://techizons.in/" target="_blank" class="link">Switch to Techizons<i class='bx bx-log-in'></i></a>
                 <a href="" class="link">How It Works</a>
-                <button class="link hidden" onclick="toggleLinks()">Close</button>
-            </div>
-            <div class="hamburger" id="navbarToggle" onclick="toggleLinks()">
+                <button class="link hidden" onclick="toggleLinks()"> Close </button>
+                <!-- Hamburger Icon -->
+              </div>
+              <div class="hamburger" id="navbarToggle" onclick="toggleLinks()">
                 &#9776;
-            </div>
+              </div>
         </div>   
     </div>
 
@@ -345,8 +358,8 @@
             </div>
 
             <!-- Image Section -->
-            <div class="image-section">
-                <img src="./Public/5436402.jpg" alt="Login Image">
+            <div class="image-section" >
+                <img src="./Public/3d-rendering-abstract-black-white.jpg" alt="Login Image">
             </div>
         </div>
     </div>
@@ -354,11 +367,11 @@
 
    
 
-     <script>
-        const toggleLinks = () => {
-          const links = document.querySelector(".links");
-          links.classList.toggle("active");
-        };
-      </script>
+    <script>
+      const toggleLinks = () => {
+        const links = document.querySelector(".links");
+        links.classList.toggle("active");
+      };
+    </script>
 </body>
 </html>
