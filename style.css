@@ -121,6 +121,7 @@
 
   .section-container .right {
     width: 50%;
+    margin-left: 200px;
   }
 
   .section-container .right .rows {
@@ -548,6 +549,8 @@
 
     .section-container .right {
       width: 100%;
+        margin-left: 0px;
+      margin-right: 140px;
     }
 
     .section-container .right .rows {
