@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+          }
+        
+               
+        
+          body {
+            font-family: "Poppins", sans-serif;
+            background-color: #ffffff;
+            width: 100%;
+          }
+        
+          .navbar{
+            max-width: var(--wide-width);
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ffffff;
+            margin-top: 0;
+          }
+        
+           
+          
+          .navbar img {
+            width: 30%;
+            height: 20%;
+          }
+        
+          .navbar .links {
+            display: flex;
+            gap: 1rem;
+          }
+        
+          .navbar .links .link {
+            color: #000000;
+            font-size: 1.3rem;
+            font-weight: 500;
+            padding: 0.4rem 1rem;
+          }
+        
+          .navbar .links .link.hidden {
+            display: none;
+          }
+        
+          .navbar .links .active {
+            background: #000;
+            color: #fff;
+          }
+        
+          .navbar .hamburger {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+          }
+          footer {
+    
+            margin: 0 auto;
+            display: grid;
+            /* responsive grid */
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.2rem;
+            padding: 3rem 2rem;
+            background: #000;
+            color: #fff;
+            margin-top: 2rem;
+          }
+        
+          footer .col {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+          }
+        
+          footer .col .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.2rem;
+          }
+        
+          footer .col .logo .img {
+            width: 40px;
+            height: 40px;
+          }
+        
+          footer .col .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        
+          footer .col h4 {
+            font-size: 1.2rem;
+            font-weight: 500;
+          }
+        
+          footer .col a {
+            font-size: 1rem;
+            color: #e4e4e4d5;
+          }
+          .card-container{
+            margin-top: 6%;
+            width: 100%;
+            
+           
+        }  
+        .card-container h2{
+            
+            width:50%;
+            margin: auto;
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: center;
+         
+            
+        }
+        .card-container p{
+            margin-left: 80px;
+            margin-right: 80px;
+            font-size: 1.3rem;
+            margin-top: 1rem;
+            text-align: center;
+            word-spacing: normal;
+    
+            
+        }
+        .rocket {
+            margin-top: 3rem;
+            margin-bottom: 3%;
+            display: flex;
+            flex-wrap: wrap; 
+            justify-content: space-between;
+            gap: 20px; 
+            padding: 20px;
+            
+        }
+        
+        
+        .rocket > div {
+            background-color:white; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+            padding: 20px;
+            flex: 1 1 calc(25% - 20px); 
+            box-sizing: border-box;
+            
+        }
+        .rocket h3{
+            text-align: start;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        
+        .rocket img {
+            max-width: 100%; 
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        .rocket p{
+            text-align: start;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+        .rocket li{
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+        
+        .btn.active {
+            background-color:white; 
+            color: black;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            justify-content: left;
+        }
+        
+        .btn.active:hover {
+            background-color: #0056b3; 
+        }
+        
+       
+        
+        @media screen and (max-width: 768px) {
+            .rocket > div {
+                flex: 1 1 calc(50% - 20px); 
+            }
+        }
+        
+        @media screen and (max-width: 480px) {
+            .rocket > div {
+                flex: 1 1 100%; 
+            }
+        }
+    
+
+        .package {
+            height: auto;
+            width: 100%;
+            background-color: white;
+            padding: 80px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+        
+        .new {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 100%;
+            gap: 2rem;
+        }
+        
+        .two {
+            display: flex;
+            gap: 2rem;
+            margin: auto;
+            max-width: 1200px;
+            width: 100%;
+        }
+        
+        .header h2 {
+            width: 80%;
+            margin: auto;
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        .p1, .p2 {
+            background-color: black;
+            border: 2px solid #fff;
+            padding: 40px;
+            margin: 20px;
+            border-radius: 0;
+            flex-basis: calc(50% - 40px);
+            box-sizing: border-box;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: left;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .p1:hover, .p2:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+        }
+        
+        .p1 h4, .p2 h4 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .p1 ul, .p2 ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .p1 ul li, .p2 ul li {
+            margin-bottom: 10px;
+            font-size: 1rem;
+            color: white;
+        }
+        
+        .btn {
+            background-color: grey;
+            color: white;
+            padding: 8px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            text-transform: uppercase;
+            font-weight: bold;
+            align-self: center;
+            margin-top: auto;
+        }
+        
+        .btn:hover {
+            background-color: #ddd;
+        }
+        
+        @media (max-width: 1024px) {
+            .card-container h2{
+                margin-top: 3rem;
+            }
+            .header h2 {
+                font-size: 2.2rem;
+            }
+        
+            .p1, .p2 {
+                flex-basis: calc(50% - 20px);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header h2 {
+                font-size: 1.8rem;
+                width: 100%;
+            }
+        
+            .p1, .p2 {
+                flex-basis: 100%;
+                margin: 10px 0;
+                padding: 20px;
+            }
+        
+            .two {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        
+            .btn {
+                font-size: 0.9rem;
+                padding: 10px 15px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header h2 {
+                font-size: 1.6rem;
+            }
+        
+            .p1, .p2 {
+                padding: 15px;
+            }
+        
+            .btn {
+                font-size: 0.8rem;
+                padding: 8px 12px;
+            }
+        }
+        
+        
+
+
+
+
+
+
+
+
+          @media (max-width: 768px) {
+        
+            .navbar .links {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background: #000;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 1rem;
+                transform: translateX(-100%);
+                transition: transform 0.3s ease-in;
+              }
+          
+              .navbar .links.active {
+                transform: translateX(0);
+                display: flex;
+              }
+              .navbar .links .link.hidden {
+                display: flex;
+                background: transparent;
+                border: none;
+              }
+              .navbar .hamburger {
+                display: flex;
+              }
+          
+              .navbar .links .link {
+                color: #fff;
+                font-size: 1.5rem;
+              }
+              .footer {
+                flex-direction: column;
+                text-align: center;
+            }
+        
+            .footer img {
+                width: 50%; 
+            }
+        
+            .socials {
+                align-items: center;
+            }
+        
+            .icons {
+                justify-content: center;
+            }
+            .card-container h2 {
+                margin-top: 3rem;
+                width: 80%;
+                font-size: 1.6rem;
+            }
+        
+            .card-container p {
+                margin-left: 40px;
+                margin-right: 40px;
+                font-size: 1.1rem;
+            }
+            }
+            @media (max-width: 480px) {
+                .card-container {
+
+                    gap: 0.5rem;
+                }
+                .card-container .headline h2{
+                 margin-bottom: 1rem;
+                width:100%;
+                font-size: 1.25rem;
+                }
+        
+                .card-container p{
+                    
+                font-size: 1rem;
+                margin-left: 20px;
+                margin-right: 20px;
+                
+                }
+                 
+            }
+
+
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="logo">
+        <img src="./Public/logo.webp" alt=""/>
+        </div>
+        <div class="links">
+            <a href="index.html" target="_blank" class="link">Home</a>
+            <a href="About_us.html" target="_blank" class="link">About</a>
+                <a href="https://techizons.in/" target="_blank" class="link">Switch to Techizons<i class='bx bx-log-in'></i></a>
+                <a href="" class="link">How It Works</a>
+            <a href="" class="link active">Login</a>
+            <button class="link hidden" onclick="toggleLinks()"> Close </button>
+            <!-- Hamburger Icon -->
+          </div>
+          <div class="hamburger" id="navbarToggle" onclick="toggleLinks()">
+            &#9776;
+          </div>
+        </div>
+    </div>
+    <section class="card-container">
+        <div class="headline">
+            <h2>Our Popular Products</h2>
+        </div>
+       <div class="paragraph">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat nihil velit voluptatum omnis doloribus. Officiis, magni assumenda. Nam, sapiente nihil aspernatur, unde similique minima
+         aliquid explicabo deserunt earum tempora aut.</p>
+       </div>
+    
+    </section>
+    
+    <section class="rocket">
+        <div class="card1">
+           
+            <img src="./Public/2261686.jpg" alt"" />
+            <h3>Graphics Design</h3>
+            <p>Enhance user satisfaction and search engine visibility with our graphic design expertise</p>
+            <ul>
+                <li>Logo Designing</li>
+
+                  <li>Brocher</li>
+                    
+                    <li>Poster Design</li>
+                    
+                    <li>Templates</li>
+                    
+                    <li>Business Presentation</li>
+                    
+                    <li>Post Design</li>
+            </ul>
+      
+    
+    </div>
+    
+    
+    <div class="card2">
+        
+        <img src="./Public/4498903.jpg" alt"" />
+        <h3>Web Development</h3>
+        <p>A normal website can help your buisness to grow and make your business digital</p>
+        <ul>
+            <li>Wordpress Website</li>
+
+               <li>PHP/Larval Website</li>
+                
+              <li>MERN Web Application</li>
+                
+                <li> Website Redesign</li>
+        </ul>
+    
+    
+   
+    </div>
+    
+    
+    <div class="card3">
+        <img src="./Public/5741168.jpg" alt"" />
+        <h3>UI/UX Designer</h3>
+    <p>Elevate user experiences with our UI/UX design expertise. We craft visually stunning and intuitively functional designs that captivate audiences and boost digital engagement. Let's redefine 
+        your digital landscape for optimal user satisfaction and search engine visibility.</p>
+        <ul>
+            <li>Website Design</li>
+
+            <li>Android App Design</li>
+        </ul>
+    
+  
+    
+    </div>
+    
+    
+    <div class="card4">
+        
+        <img src="./Public/digital-marketing-with-icons-business-people.jpg" alt"" />
+        <h3>Digital Marketing</h3>
+        <p>Supercharge your online presence with our SEO-friendly digital marketing services
+        </p>
+        <ul>
+            <li>Social Media Handling</li>
+
+             <li>Email Marketing</li>   
+                
+                <li>Social Ads</li>
+                
+               <li>Content Generation</li>
+        </ul>
+    
+    
+    </div>
+
+    <section class="package">
+        <div class="new">
+            <div class="header">
+            <h2>Choose Your Packages</h2>
+        </div>
+        <div class="two">
+        <div class="p1">
+            <h4>Standard Package</h4>
+            <ul>
+                <li>Website Template</li>
+                <li>7 days Revising</li>
+                <li>Business Broucher</li>
+                <li>Visiting Card</li>
+            </ul>
+            <button class="btn active" >
+                5000 ₹
+              </button>
+        </div>
+        <div class="p2">
+            <h4>Premium Package</h4>
+            <ul>
+                <li>Custom Website</li>
+                <li>Social Media Kit</li>
+                <li>Consultancy Free</li>
+                <li>14 days Revising</li>
+                <li>Business Broucher</li>
+            
+            </ul>
+            <button class="btn active" >
+                10000 ₹
+              </button>
+        </div>
+        </div>
+        </div>
+    </section>
+    
+    </section>
+    <footer>
+        <div class="col">
+          <div class="logo">
+            <div class="img">
+                <img src="Public/logo.webp" alt="logo" />
+            </div>
+          </div>
+          <!-- copyright -->
+          <p>&copy; 2024 Earnist Inc <br />All rights reserved</p>
+        </div>
+        <div class="col">
+          <h4>Company</h4>
+          <a href="">About</a>
+          <a href="">Services</a>
+          <a href="">Contact</a>
+          <a href="">FAQ</a>
+        </div>
+        <div class="col">
+          <h4>Resourses</h4>
+          <a href="">Blog</a>
+          <a href="">FAQ</a>
+          <a href="">Terms</a>
+          <a href="">Privacy</a>
+        </div>
+        <div class="col">
+          <h4>Connect</h4>
+          <a href="">Twitter</a>
+          <a href="">Linkdin</a>
+          <a href="">Instagram</a>
+          <a href="">Facebook</a>
+        </div>
+      </footer>
+     
+      <script>
+        const toggleLinks = () => {
+          const links = document.querySelector(".links");
+          links.classList.toggle("active");
+        };
+      </script>
+    
+</body>
+</html>
